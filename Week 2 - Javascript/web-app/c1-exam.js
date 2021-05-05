@@ -14,9 +14,17 @@ const Exam = Object.create(null);
 //    for example:
 //      an input list of [1,2,3,4,5,6,7,8]
 //      returns [1,4,7]
-Exam.every_third = function () {
-    return;
-};
+Exam.every_third = function (Arr) {
+    let ArrOut = [];
+    let index;
+    for (index = 0; index < Arr.length; index +=1) {
+        if (index % 3 === 0) {
+            ArrOut.push(Arr[index]);
+        }
+    }
+    return ArrOut;
+};    
+
 
 
 // Strings
@@ -29,16 +37,20 @@ Exam.every_third = function () {
 //       the input sentences "the cow jumped over the moon" and
 //                            "jack and jill went up the"
 //       returns "the jack cow and jumped jill over went the up moon the"
-Exam.merge_sentences = function () {
+Exam.merge_sentences = function (sentence1, sentence2) {
+    if (sentence1.split(" ").length === sentence2.split(" ")){
+        throw "ValueError";}
     return;
-};
+
 
 // Write a function that returns the number of lowercase letters in
 // input string.
 //     for example:
 //          the input "sPonGe bOb"
 //          returns 6
-Exam.lowercase_count = function () {
+Exam.lowercase_count = function (input_string) {
+    let total = 0;
+    for (letter in input_string
     return;
 };
 
@@ -80,5 +92,8 @@ Exam.greeting = function () {
 Exam.floor_line = function () {
     return;
 };
+
+const myarray = [1,2,3,4,5,6,7,8,9]
+console.log(Exam.every_third(myarray));
 
 export default Object.freeze(Exam);
