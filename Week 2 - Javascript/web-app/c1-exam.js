@@ -37,35 +37,67 @@ Exam.every_third = function (Arr) {
 //       the input sentences "the cow jumped over the moon" and
 //                            "jack and jill went up the"
 //       returns "the jack cow and jumped jill over went the up moon the"
-Exam.merge_sentences = function (sentence1, sentence2) {
-    if (sentence1.split(" ").length === sentence2.split(" ")){
-        throw "ValueError";}
-    return;
 
+
+// Exam.merge_sentences = function (sentence1, sentence2) {
+//     if (sentence1.split(" ").length === sentence2.split(" ")) {
+//         throw "ValueError"; 
+//      } const arr1 = sentence1.split(" ");
+//     const arr2 = sentence2.splir(" ");
+//     const mergeAlernatively = (arr1, arr2) => {
+//        const res = [];
+//         (let i = 0; i < arr1.length + arr2.length; i++ ) {
+//           if(i % 2 === 0){
+//              res.push(arr1[i/2]);
+//           }else{
+//              res.push(arr2[(i-1)/2]);
+//           };
+//        };
+//        return res;
+//     };
+//     console.log(mergeAlernatively(arr1, arr2));
 
 // Write a function that returns the number of lowercase letters in
 // input string.
 //     for example:
 //          the input "sPonGe bOb"
 //          returns 6
-Exam.lowercase_count = function (input_string) {
-    let total = 0;
-    for (letter in input_string
-    return;
-};
+
+
+// Exam.lowercase_count = function (input_string) {
+//     let total = 0;
+//     for (letter in input_string
+//     return;
+// };
+
+// var str = "ThIs Is A Test";
+// for(var i = 0, len = str.length, count=0, ch; i < len; ++i)
+// {
+// 	ch = str.charAt(i);
+// 	if(ch >= 'A' && ch <= 'Z') ++count;
+// }
+
+// alert(count);
 
 
 // Objects
 
-// Write a function that returns the longest a key in the input object
+// Write a function that returns the longest key in the input object
 // whose keys are all strings.
-Exam.longest_key = function () {
-    return;
-};
+Exam.longest_key = function (input_object) {
+    const keys = Object.keys(input_object);
+    var long1= "";
+    for (i=0; i<keys.length; i++) {
+        if (keys[i].length > long1.length){
+            long1 = keys[i].length;
+        }
+        return long1;
+    }
+
 
 // Write a function that returns the largest value that is an even value in the
 // input dictionary whose values are all whole numbers.
-Exam.value_greatest_even = function () {
+Exam.value_greatest_even = function (input_dictionary) {
     return;
 };
 
@@ -77,8 +109,8 @@ Exam.value_greatest_even = function () {
 //
 // The username argument should not be set to a default,
 // but the location argument should default to "London".
-Exam.greeting = function () {
-    return;
+Exam.greeting = function (username, location = "London") {
+    return "Hello, ${username} , how is ${location} ?" ;
 };
 
 
@@ -89,9 +121,14 @@ Exam.greeting = function () {
 //     offset with a default of 0
 // The function returns the calculation x * scalar + offset for the input x
 // if the output value of the calculation is positive, otherwise it returns 0.
-Exam.floor_line = function () {
-    return;
-};
+
+// Exam.floor_line = function (x, scalar = 1, offset = 0) {
+//     // const ans = x * scalar + offset;
+//     // if (ans < 0) {
+//     //     return 0;
+//     // } else {
+//     //     return ans;
+//     // }
 
 const myarray = [1,2,3,4,5,6,7,8,9]
 console.log(Exam.every_third(myarray));
