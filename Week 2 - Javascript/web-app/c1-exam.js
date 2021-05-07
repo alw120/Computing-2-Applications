@@ -14,6 +14,7 @@ const Exam = Object.create(null);
 //    for example:
 //      an input list of [1,2,3,4,5,6,7,8]
 //      returns [1,4,7]
+
 // Exam.every_third = function (Arr) {
 //     let ArrOut = [];
 //     let index;
@@ -42,23 +43,15 @@ Exam.every_third = function (array) {
 //       returns "the jack cow and jumped jill over went the up moon the"
 
 
-// Exam.merge_sentences = function (sentence1, sentence2) {
-//     if (sentence1.split(" ").length === sentence2.split(" ")) {
-//         throw "ValueError"; 
-//      } const arr1 = sentence1.split(" ");
-//     const arr2 = sentence2.splir(" ");
-//     const mergeAlernatively = (arr1, arr2) => {
-//        const res = [];
-//         (let i = 0; i < arr1.length + arr2.length; i++ ) {
-//           if(i % 2 === 0){
-//              res.push(arr1[i/2]);
-//           }else{
-//              res.push(arr2[(i-1)/2]);
-//           };
-//        };
-//        return res;
-//     };
-//     console.log(mergeAlernatively(arr1, arr2));
+Exam.merge_sentences = function (sentence1, sentence2) {
+    const arr1 = sentence1.split(" ");
+    const arr2 = sentence2.split(" ");
+    if (arr1.length !== arr2.length) {
+        throw "ValueError";
+    }
+    return arr1.flatMap((v, k) => [v, arr2[k]]).join(" ");
+};
+
 
 // Write a function that returns the number of lowercase letters in
 // input string.
@@ -67,34 +60,31 @@ Exam.every_third = function (array) {
 //          returns 6
 
 
-Exam.lowercase_count = function (input_string) {
-    const string_to_array = input_string.split('');
-    string_to_array.toLowerCase() === string_to_array.
+    Exam.lowercase_count = function (input_string) {
+        const string_to_array = input_string.split("");
+        return string_to_array.filter((a) => a === a.toLowerCase()).length;
+    }
+
+// First you convert the string into an arry with each letter as an element. 
+// They you filter through the array of letters down to only those that are lowercase.
+// Lastly find the length of the filtered array (giving the answer)
 
 
 // Objects
 
 // Write a function that returns the longest key in the input object
 // whose keys are all strings.
-// Exam.longest_key = function (input_object) {
-//     const keys = Object.keys(input_object);
-//     var long1= "";
-//     for (i=0; i<keys.length; i++) {
-//         if (keys[i].length > long1.length){
-//             long1 = keys[i].length;
-//         }
-//         return long1;
-//     }
 
-Exam.longest_keys = function(object) {
+Exam.longest_key = function (object) {
     return Object.keys(object).reduce((a, x) => (a.length >= x.length
-        ? a:x));
-    };
+        ? a : x));
+};
 
 // Write a function that returns the largest value that is an even value in the
 // input dictionary whose values are all whole numbers.
 Exam.value_greatest_even = function (input_dictionary) {
-    return;
+    const even = Object.values(input_dictionary).filter((k) => k % 2 === 0);
+    return Math.max(...even)
 };
 
 
@@ -105,10 +95,13 @@ Exam.value_greatest_even = function (input_dictionary) {
 //
 // The username argument should not be set to a default,
 // but the location argument should default to "London".
-Exam.greeting = function (username, location = "London") {
-    return "Hello, ${username} , how is ${location} ?" ;
-};
+// Exam.greeting = function (username, location = "London") {
+//     return "Hello, ${username} , how is ${location} ?" ;
+// };
 
+Exam.greeting = function (name, location = "London") {
+    return `Hello, ${name}, how is ${location}?`;
+};
 
 // Write a function three input arguments,
 // the first one, x, is required and the second two are
@@ -118,13 +111,14 @@ Exam.greeting = function (username, location = "London") {
 // The function returns the calculation x * scalar + offset for the input x
 // if the output value of the calculation is positive, otherwise it returns 0.
 
-// Exam.floor_line = function (x, scalar = 1, offset = 0) {
-//     // const ans = x * scalar + offset;
-//     // if (ans < 0) {
-//     //     return 0;
-//     // } else {
-//     //     return ans;
-//     // }
+Exam.floor_line = function (x, scalar = 1, offset = 0) {
+    const ans = x * scalar + offset;
+    if (ans < 0) {
+        return 0;
+    } else {
+        return ans;
+    }
+};
 
 const myarray = [1,2,3,4,5,6,7,8,9]
 console.log(Exam.every_third(myarray));
