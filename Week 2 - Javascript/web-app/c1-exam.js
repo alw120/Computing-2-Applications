@@ -14,18 +14,21 @@ const Exam = Object.create(null);
 //    for example:
 //      an input list of [1,2,3,4,5,6,7,8]
 //      returns [1,4,7]
-Exam.every_third = function (Arr) {
-    let ArrOut = [];
-    let index;
-    for (index = 0; index < Arr.length; index +=1) {
-        if (index % 3 === 0) {
-            ArrOut.push(Arr[index]);
-        }
-    }
-    return ArrOut;
-};    
+// Exam.every_third = function (Arr) {
+//     let ArrOut = [];
+//     let index;
+//     for (index = 0; index < Arr.length; index +=1) {
+//         if (index % 3 === 0) {
+//             ArrOut.push(Arr[index]);
+//         }
+//     }
+//     return ArrOut;
+// };    
 
-
+Exam.every_third = function (array) {
+    return array.filter((ignore, k) => k % 3 === 0);
+};
+// where k represents the keys (not the values/indexes)
 
 // Strings
 
@@ -64,36 +67,29 @@ Exam.every_third = function (Arr) {
 //          returns 6
 
 
-// Exam.lowercase_count = function (input_string) {
-//     let total = 0;
-//     for (letter in input_string
-//     return;
-// };
-
-// var str = "ThIs Is A Test";
-// for(var i = 0, len = str.length, count=0, ch; i < len; ++i)
-// {
-// 	ch = str.charAt(i);
-// 	if(ch >= 'A' && ch <= 'Z') ++count;
-// }
-
-// alert(count);
+Exam.lowercase_count = function (input_string) {
+    const string_to_array = input_string.split('');
+    string_to_array.toLowerCase() === string_to_array.
 
 
 // Objects
 
 // Write a function that returns the longest key in the input object
 // whose keys are all strings.
-Exam.longest_key = function (input_object) {
-    const keys = Object.keys(input_object);
-    var long1= "";
-    for (i=0; i<keys.length; i++) {
-        if (keys[i].length > long1.length){
-            long1 = keys[i].length;
-        }
-        return long1;
-    }
+// Exam.longest_key = function (input_object) {
+//     const keys = Object.keys(input_object);
+//     var long1= "";
+//     for (i=0; i<keys.length; i++) {
+//         if (keys[i].length > long1.length){
+//             long1 = keys[i].length;
+//         }
+//         return long1;
+//     }
 
+Exam.longest_keys = function(object) {
+    return Object.keys(object).reduce((a, x) => (a.length >= x.length
+        ? a:x));
+    };
 
 // Write a function that returns the largest value that is an even value in the
 // input dictionary whose values are all whole numbers.
