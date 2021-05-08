@@ -84,7 +84,7 @@ Exam.longest_key = function (object) {
 // input dictionary whose values are all whole numbers.
 Exam.value_greatest_even = function (input_dictionary) {
     const even = Object.values(input_dictionary).filter((k) => k % 2 === 0);
-    return Math.max(...even)
+    return Math.max(...even)x
 };
 
 
