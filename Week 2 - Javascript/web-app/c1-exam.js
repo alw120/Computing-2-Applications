@@ -24,7 +24,7 @@ const Exam = Object.create(null);
 //         }
 //     }
 //     return ArrOut;
-// };    
+// };
 
 Exam.every_third = function (array) {
     return array.filter((ignore, k) => k % 3 === 0);
@@ -63,10 +63,11 @@ Exam.merge_sentences = function (sentence1, sentence2) {
     Exam.lowercase_count = function (input_string) {
         const string_to_array = input_string.split("");
         return string_to_array.filter((a) => a === a.toLowerCase()).length;
-    }
+    };
 
-// First you convert the string into an arry with each letter as an element. 
-// They you filter through the array of letters down to only those that are lowercase.
+// First you convert the string into an arry with each letter as an element.
+// They you filter through the array of letters down to only
+// those that are lowercase.
 // Lastly find the length of the filtered array (giving the answer)
 
 
