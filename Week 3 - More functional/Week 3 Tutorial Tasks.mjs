@@ -52,4 +52,4 @@ const fibonacci_like = function (b0, b1) {
     }
 };
 
-console.log(fibonacci_like(0,1))
+console.log(fibonacci_like(2308, 4261)(8))
