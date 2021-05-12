@@ -9,6 +9,16 @@ const factorial = function (n) {
 
 console.log(factorial(4));
 
+// Factorial code using Tail Recursion (more memory efficient)
+function fact_orial(n, a = 1) {
+    if (n === 0) {
+        return a;
+    }
+    return fact_orial(n - 1, n * a);
+}
+
+console.log(fact_orial(4, 5));
+
 // This is code using recursion to find the fibonacci series
 const fibonacci = function (n) {
     if (n === 0) {
@@ -22,6 +32,19 @@ const fibonacci = function (n) {
 };
 
 console.log(fibonacci(8));
+console.log(fibonacci(40));
+
+/* This code is another way to generate
+the fibonacci numbers, using Tail Call Optimisation (TCO) recursion */
+function fib(n, a = 1, b = 0) {
+    if (n === 0) {
+        return b;
+    } else {
+        return fib(n - 1, b, a + b);
+    }
+}
+
+console.log(fib(10, 3, 5));
 
 // This code uses the recursion rule to find the Lucas numbers
 const lucas = function (n) {
