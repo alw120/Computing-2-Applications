@@ -53,3 +53,13 @@ const fibonacci_like = function (b0, b1) {
 };
 
 console.log(fibonacci_like(2308, 4261)(8))
+
+const fibonacci_2 = function (n, a, b) {
+    if (n === 0) {
+        return a;
+    } else {
+        return fibonacci_2 (n - 1, b, a + b);
+    }
+};
+
+console.log(fibonacci_2(2308, 4261)(8));
