@@ -144,4 +144,7 @@ game_2048.up = compose(transpose, game_2048.left, transpose);
 
 game_2048.down = compose(transpose, game_2048.right, transpose);
 
+new_board = () => board;
+
 export default Object.freeze(game_2048);
+

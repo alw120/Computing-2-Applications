@@ -103,6 +103,3 @@ console.log(fibonacci_like(2308, 4261)(5));
 // };
 
 // console.log(fibonacci_2(2308, 4261)(8));
-
-//Connect 4
-// new_board = () => board;
