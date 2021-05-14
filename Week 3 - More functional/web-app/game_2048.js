@@ -144,10 +144,33 @@ game_2048.up = compose(transpose, game_2048.left, transpose);
 
 game_2048.down = compose(transpose, game_2048.right, transpose);
 
-const new_board = () => board;
+const zeros_board = [[0, 0, 0, 0],[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
+
+game_2048.new_board = () => zeros_board;
+
+const single_arr = game_2048.board.flat();
+
+const no_zeros = (row) => row.map(strip_zeros);
+
+const power_two = (x) => (2 ** x);
+
+const arr_power_two = (row) => row.map(power_two);
+
+const row_score = (row) => row.reduce((a, b) => a + b, 0);
+
+const arr_row_score = (row) => row.map(row_score);
+
+const score = (single_arr) => arr_row_score(arr_power_two(no_zeros(single_arr)));
+
+console.log(score);
+
+// const board = [
+//     [1, 1, 2, 2],
+//     [1, 0, 0, 1],
+//     [0, 0, 1, 1],
+//     [0, 2, 2, 3]
+// ];
+
+//score = 36 (2^n)
 
 export default Object.freeze(game_2048);
-
-score = (board) => number;
-
-any_valid_moves = (board) = (board) => Boolean;
