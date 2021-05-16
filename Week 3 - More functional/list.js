@@ -6,9 +6,10 @@ const sequence = (number) => Array.from(new Array(number).keys());
 
 /* Transposes a 2×2 array (swaps rows and columns). */
 
- const transpose = (array) => array[0].map(
+const transpose = (array) => array[0].map(
     (ignore, colIndex) => array.map((row) => row[colIndex])
 );
+transpose([1, 2, 3, 4]);
 
 /* 1. Returns an array with equally spaced entries starting at start
 and ending at end (exclusive) in steps of step.
