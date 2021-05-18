@@ -2,7 +2,7 @@
 
 // Returns a new array with entries from 0 to n - 1
 const sequence = (number) => Array.from(new Array(number).keys());
-    // sequence(5) returns [0, 1, 2, 3, 4]
+console.log(sequence(5)); // returns [0, 1, 2, 3, 4]
 
 /* Transposes a 2×2 array (swaps rows and columns). */
 
@@ -17,7 +17,7 @@ i.e. range(2, 5, 0.5) = [2, 2.5, 3, 3.5, 4, 4.5].
 range = (start, end, step) => array */
 
 function range(start, end, num, endpoint = true) {
-    const div = (endpoint ? (num - 1) : num);
+    const div = (endpoint) ? (num - 1) : num;
     const step = (end - start) / div;
     return Array.from({length: num}, (_, i) => start + step * i);
 }
