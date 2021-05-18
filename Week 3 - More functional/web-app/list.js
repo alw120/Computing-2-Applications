@@ -101,4 +101,4 @@ and could theoretically refer to anything. */
 
 
 
-export default Object.freeze(List);
+export default Object.freeze(List)};
