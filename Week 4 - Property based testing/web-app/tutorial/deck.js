@@ -94,6 +94,10 @@ Deck.faro_out_shuffle = function (deck) {
 };
 
 // Bad example
+/* Deck.faro_out_shuffle = function (deck) {
+    return deck
+};
+
 // Deck.faro_out_shuffle = function (deck) {
 //         deck[1], deck[2] = deck[2], deck[1];
 //         const faro = (deck) => deck.slice(0, (deck.length / 2)).flatMap((card, i) =>[card, deck[i + (deck.length / 2)]]);
