@@ -88,17 +88,11 @@ function zippp(arrays) {
     });
 }
 
-// Alternative method:
-function zip(arrays) {
-    return arrays[0].map(function(_,i){
-        return arrays.map(function(array){return array[i];
-    });
-}
-)
+console.log(zippp([1, 2, 3, 4]));
 
 /* '_' is a valid variable identifier in JavaScript,
 and could theoretically refer to anything. */
 
 
 
-export default Object.freeze(List)};
+export default Object.freeze(List);
