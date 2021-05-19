@@ -88,8 +88,16 @@ Deck.faro_out_shuffle = function (deck) {
  * into a new deck, with the top ending up one-in.
  * https://en.wikipedia.org/wiki/Faro_shuffle
  */
+// Deck.faro_in_shuffle = function (deck) {
+//     const half = Math.ceil(deck.length / 2);
+//     const first_half = deck.splice(0, half);
+//     const second_half = deck.splice(-half);
+//     return first_half.flatMap((v, k) => [v, second_half[k]]);
+// };
+
 Deck.faro_in_shuffle = function (deck) {
-    return deck; // Placeholder implementation.
+    deck.slice(0, (deck.length / 2));
+    return deck.flatMap((card, i) => [card, deck[i + (deck.length / 2)]]);
 };
 
 export default Object.freeze(Deck);
