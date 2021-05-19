@@ -78,6 +78,7 @@ Deck.decks_equal = (deck_1, deck_2) => (
  * into a new deck, with the top card staying on top.
  * https://en.wikipedia.org/wiki/Faro_shuffle
  */
+
 // Deck.faro_out_shuffle = function (deck) {
 //     const faro = (deck) => deck.slice(0, (deck.length / 2)).flatMap((card, i) =>[card, deck[i + (deck.length / 2)]]);
 //     return (faro(deck));
@@ -85,11 +86,20 @@ Deck.decks_equal = (deck_1, deck_2) => (
 // };
 
 Deck.faro_out_shuffle = function (deck) {
-        deck[1], deck[2] = deck[2], deck[1];
-        const faro = (deck) => deck.slice(0, (deck.length / 2)).flatMap((card, i) =>[card, deck[i + (deck.length / 2)]]);
-        return faro(deck);
-        // Placeholder implementation.
-    };
+    const top = deck.slice(0, Math.floor(deck.length / 2));
+    const bottom = deck.slice(Math.floor(deck.length / 2), deck.length);
+    return top.flatMap(function (card, index) {
+        return [card, bottom[index]];
+    });
+};
+
+// Bad example
+// Deck.faro_out_shuffle = function (deck) {
+//         deck[1], deck[2] = deck[2], deck[1];
+//         const faro = (deck) => deck.slice(0, (deck.length / 2)).flatMap((card, i) =>[card, deck[i + (deck.length / 2)]]);
+//         return faro(deck);
+//         // Placeholder implementation.
+//     };
 
 /**
  * Return a mathematically 'perfect' shuffle of a deck.
